@@ -1,4 +1,4 @@
-### [S-#] Storing passwords on-chain makes it visible to anyone, it is no longer private.
+### [H-1] Storing passwords on-chain makes it visible to anyone, it is no longer private.
 
 **Description:** All data stored on-chain is visible to anyone, and can be read directly from the blockchain. The `PasswordStore::_password` variable is intended to be a private variable and only accessed through the `PasswordStore::getPassword` function, which is intended to be called only by the owner.
 
@@ -48,7 +48,9 @@ myPassword
 
 
 
-### [S-#] `PasswordStore::setPassword` has no access control, anyone can call it.
+
+
+### [H-2] `PasswordStore::setPassword` has no access control, anyone can call it.
 
 **Description:** The `PasswordStore::setPassword` function is set to be an `external` function, however, natspec of the function and overall architecture of the protocol suggest `This function allows only the owner to set a new password.`
 
@@ -91,7 +93,7 @@ myPassword
 ```
 
 
-### [S-#] The `PasswordStore::getPassword` function natspec suggests a parameter that doesn't exist, causing the natspec to be incorrect.
+### [I-1] The `PasswordStore::getPassword` function natspec suggests a parameter that doesn't exist, causing the natspec to be incorrect.
 
 **Description:** The `PasswordStore::getPassword` function signature is `getPassword()` while the natspec suggests it should be `getPassword(string)`.
 
